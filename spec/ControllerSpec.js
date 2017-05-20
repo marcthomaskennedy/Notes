@@ -15,11 +15,11 @@ describe("Controller", () => {
     describe("Test Controller.addNewNote() method", () => {
         it("Should throw a TypeError", () => {
             expect(() => {
-                Controller.addNewNote(view, true)
+                Controller.addNewNote(model, view, true)
             }).toThrowError(TypeError);
         });
         it("Should be of length 1", () => {
-            Controller.addNewNote(view, "Hello, world!");
+            Controller.addNewNote(model, view, "Hello, world!");
             const data = model.getAllNotes();
             expect(data.length).toBe(1);
         });
