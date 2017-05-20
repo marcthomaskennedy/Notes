@@ -36,12 +36,13 @@ describe("Model", () => {
     });
     describe("Test Model.getAllNotes() method", () => {
         it("Should be of type Array", () => {
-            const notes = JSON.parse(localStorage.notes);
+            const notes = model.getAllNotes();
             expect(notes).toEqual(jasmine.any(Array));
         });
         it("Should be of length 2", () => {
-            model.add({content: "Hello, world!"});
-            const data = JSON.parse(localStorage.notes);
+            // Remember we added a note on line 32 so length should be two
+            model.add({content: "Hello, me!"});
+            const data = model.getAllNotes();
             expect(data.length).toBe(2);
         });
     });
