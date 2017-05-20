@@ -23,21 +23,16 @@ describe("Controller", () => {
             const data = model.getAllNotes();
             expect(data.length).toBe(1);
         });
-        localStorage.clear();
     });
     describe("Test Controller.getNotes() method", () => {
         it("Should be an Array", () => {
             const data = Controller.getNotes(model);
             expect(data).toEqual(jasmine.any(Array));
         });
-        it("Should be an empty Array", () => {
-            const data = Controller.getNotes(model);
-            expect(data.length).toBe(0);
-        });
-        it("Should be of length 1", () => {
+        it("Should be of length 2", () => {
             model.add({content: "Hello, Controller!"});
             const data = Controller.getNotes(model);
-            expect(data.length).toBe(1);
+            expect(data.length).toBe(2);
         });
     });
 });
