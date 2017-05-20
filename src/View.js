@@ -8,8 +8,6 @@ class View {
         this.noteList = document.querySelector("#notes");
         this.newNoteForm = document.querySelector("#new-note-form");
         this. newNoteContent = document.querySelector("#new-note-content");
-        console.log("" + this.newNoteForm);
-        console.log("" + this.newNoteContent);
     }
 
     /*
@@ -20,16 +18,23 @@ class View {
      * HTMLInputElement newNoteContent - An instance of HTMLInputElement
      *HTMLFormElement newNoteForm - An instance of HTMLFormElement
      */
-    addSubmitEvent(model, newNoteContent, newNoteForm) {
+    addSubmitEvent(model, view, newNoteContent, newNoteForm) {
         newNoteForm.addEventListener("submit", function(e) {
             Controller.addNewNote(model, view, newNoteContent.value);
-            newNoteContent.value("");
+            newNoteContent.value = "";
             e.preventDefault();
         });
-        this.render();
+        this.render(model);
     }
-
-    render() {
-
+    /*
+     *
+     */
+    render(model) {
+        let htmlStr = "";
+        Controller.getNotes(model).forEach( function(note) {
+            htmlStr += '<li class="note">' + note.content +
+            '</li>';
+        });
+        this.noteList.innerHTML = htmlStr;
     }
 }
