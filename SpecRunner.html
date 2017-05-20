@@ -6,7 +6,9 @@
 
   <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.6.1/jasmine_favicon.png">
   <link rel="stylesheet" href="lib/jasmine-2.6.1/jasmine.css">
+  <link rel="stylesheet" href="css/retain.css">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="lib/jasmine-2.6.1/jasmine.js"></script>
   <script src="lib/jasmine-2.6.1/jasmine-html.js"></script>
   <script src="lib/jasmine-2.6.1/boot.js"></script>
@@ -15,6 +17,7 @@
   <script src="src/Model.js"></script>
   <script src="src/View.js"></script>
   <script src="src/Controller.js"></script>
+  <script src="src/main.js"></script>
 
   <!-- include spec files here... -->
   <script src="spec/ModelSpec.js"></script>
@@ -24,5 +27,9 @@
 </head>
 
 <body>
+    <form id="new-note-form" class="new-note-form">
+        <input id="new-note-content" class="new-note-content">
+    </form>
+    <ul id="notes" class="notes"></ul>
 </body>
 </html>
