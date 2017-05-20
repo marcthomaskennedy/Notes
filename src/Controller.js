@@ -13,4 +13,22 @@ class Controller {
     static getNotes(model) {
         return model.getAllNotes();
     }
+
+    /*
+     * Adds a note to localStorage
+     * (Model, Object, String) throws TypeError => undefined
+     * Model model - An instance of the Model class
+     * Object view - An instance of the View class
+     * String note - The note text to add to localStorage
+     */
+     static addNewNote(model, view, note) {
+         console.log(typeof note);
+         if (!(note.constructor === String)) {
+            throw new TypeError("note argument must be of type String"); 
+         }
+         model.add({
+             content: note
+         });
+         //view.render();
+     }
 }
