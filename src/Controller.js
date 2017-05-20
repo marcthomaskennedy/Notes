@@ -28,6 +28,6 @@ class Controller {
          model.add({
              content: note
          });
-         //view.render();
+         view.render(model);
      }
 }
