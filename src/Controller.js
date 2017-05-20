@@ -22,9 +22,8 @@ class Controller {
      * String note - The note text to add to localStorage
      */
      static addNewNote(model, view, note) {
-         console.log(typeof note);
          if (!(note.constructor === String)) {
-            throw new TypeError("note argument must be of type String"); 
+            throw new TypeError("note argument must be of type String");
          }
          model.add({
              content: note
