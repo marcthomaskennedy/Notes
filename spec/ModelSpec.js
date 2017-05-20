@@ -2,15 +2,18 @@ describe("Model", () => {
     let model;
 
     beforeAll(() => {
-        mode = new Model();
+        model = new Model();
     });
-    describe("Test Model.init() method", () => {
+    afterAll(() => {
+        localStorage.clear();
+    });
+    describe("Test Model.constructor() method", () => {
         it("Should be of type Array", () => {
-            let notes = JSON.parse(localStorage.notes);
+            const notes = JSON.parse(localStorage.notes);
             expect(notes).toEqual(jasmine.any(Array));
             });
         it("Should be an empty Array", () => {
-            let notes = JSON.parse(localStorage.notes);
+            const notes = JSON.parse(localStorage.notes);
             expect(notes.length).toBe(0);
         });
         // Should be of type String before JSON.parse
@@ -23,15 +26,23 @@ describe("Model", () => {
         it("Should throw a TypeError", () => {
             expect(() => {
                 model.add(1234)
-            }).toThrow(TypeError);
+            }).toThrowError(TypeError);
         });
         it("Should be of length 1", () => {
             model.add({content: "Hello, world!"});
-            let data = JSON.parse(localStorage.notes);
+            const data = JSON.parse(localStorage.notes);
             expect(data.length).toBe(1);
         });
     });
     describe("Test Model.getAllNotes() method", () => {
-
+        it("Should be of type Array", () => {
+            const notes = JSON.parse(localStorage.notes);
+            expect(notes).toEqual(jasmine.any(Array));
+        });
+        it("Should be of length 2", () => {
+            model.add({content: "Hello, world!"});
+            const data = JSON.parse(localStorage.notes);
+            expect(data.length).toBe(2);
+        });
     });
 });
