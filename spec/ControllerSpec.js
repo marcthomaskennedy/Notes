@@ -1,8 +1,10 @@
 describe("Controller", () => {
     let model;
+    let view;
 
     beforeAll(() => {
         model = new Model();
+        view = new View();
     });
     afterAll(() => {
         localStorage.clear();
@@ -11,7 +13,17 @@ describe("Controller", () => {
 
     });
     describe("Test Controller.addNewNote() method", () => {
-
+        it("Should throw a TypeError", () => {
+            expect(() => {
+                Controller.addNewNote(view, true)
+            }).toThrowError(TypeError);
+        });
+        it("Should be of length 1", () => {
+            Controller.addNewNote(view, "Hello, world!");
+            const data = model.getAllNotes();
+            expect(data.length).toBe(1);
+        });
+        localStorage.clear();
     });
     describe("Test Controller.getNotes() method", () => {
         it("Should be an Array", () => {
