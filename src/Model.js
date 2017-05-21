@@ -21,6 +21,7 @@ class Model {
      * Object obj - The note object to add
      * Example call:
      *     add({content: "Hello, world!"});
+     * Modifies localStorage.notes
      */
     add(obj) {
         if (!(obj.constructor === Object)) {
