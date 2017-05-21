@@ -9,9 +9,6 @@ describe("Controller", () => {
     afterAll(() => {
         localStorage.clear();
     });
-    describe("Test Controller.init() method", () => {
-
-    });
     describe("Test Controller.addNewNote() method", () => {
         it("Should throw a TypeError", () => {
             expect(() => {
