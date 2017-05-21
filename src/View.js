@@ -26,8 +26,9 @@ class View {
         });
         this.render(model);
     }
+
     /*
-     *
+     * Renders the notes that are stored in localStorage.notes
      */
     render(model) {
         let htmlStr = "";
