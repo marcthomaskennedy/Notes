@@ -1,5 +1,5 @@
 /*
- *  A simple class the is the hub between the Model and View classes.
+ *  A simple class that is the hub between the Model and View classes.
  * Author: Marc Kennedy
  */
 class Controller {
@@ -16,9 +16,9 @@ class Controller {
 
     /*
      * Adds a note to localStorage
-     * (Model, Object, String) throws TypeError => undefined
+     * (Model, View, String) throws TypeError => undefined
      * Model model - An instance of the Model class
-     * Object view - An instance of the View class
+     * View view - An instance of the View class
      * String note - The note text to add to localStorage
      */
      static addNewNote(model, view, note) {
