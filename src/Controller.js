@@ -20,6 +20,7 @@ class Controller {
      * Model model - An instance of the Model class
      * View view - An instance of the View class
      * String note - The note text to add to localStorage
+     * Modifies localStorage.note
      */
      static addNewNote(model, view, note) {
          if (!(note.constructor === String)) {
