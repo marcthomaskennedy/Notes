@@ -1,5 +1,4 @@
-# Udacity Retain
+# RetainES6
 
-This is an example from Udacity's [Javascript Design Patterns course](https://www.udacity.com/course/javascript-design-patterns--ud989) for how to use MV* frameworks.
-
-Clone the repo and open up `index.html` in your browser of choice.
+This is a simple application that displays a list of post-it style notes. It was
+written to test some of the new features of ES6(JS2015) including classes, static classes, arrow functions, const and let declarations. It also uses test first development with Jasmine and is organised using the MVC design pattern.
